@@ -1,0 +1,804 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+}
+html, body{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    color: #f7f7f7;
+    font-weight: 400;
+    scroll-behavior: smooth;
+}
+body{
+    background-image: linear-gradient(to bottom left,rgb(32, 145, 180),rgb(255, 255, 255));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+html{
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-size: 10px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+.glow-on-hover {
+    position: relative;
+    top: -27rem;
+    left: 62rem;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111111;
+    cursor: pointer;
+    z-index: 0;
+    border-radius: 10px;
+    animation: slideUp 2s ease-in-out;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #00aaff, #1500ff, #00c3ff, #ae00ff, #00ffd5, #002bff, #7a00ff, #00ffdd, #006eff);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+.button-1 {
+    background-color: transparent;
+    border: 0px solid #000000;
+    border-radius: 20px;
+    -webkit-transition: all .10s ease-in-out;
+    transition: all .10s ease-in-out;
+    color: #ffffff;
+  }
+  .button-1:hover {
+    box-shadow: 0 0 10px 0 #ffffff inset, 0 0 20px 2px #ffffff;
+    border: 0px solid #000000;
+  }
+
+#cord{
+    position: relative;
+    top: 0.5rem;
+    justify-content: center;
+    margin-left: 10rem;
+    margin-top: 5rem;
+    background-image: radial-gradient( rgb(255, 255, 255), rgb(169, 244, 255));
+}
+#card-text{
+     margin-left: 2rem; 
+     padding-top: 1rem;
+}
+.h1{
+    margin-top: 5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    color:#ffffff;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    padding-bottom: 2rem;
+}
+
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    border-radius: 20px;
+    max-width: 300px; /* Adjust the maximum width as needed */
+    margin: 2rem;
+    overflow: hiddens;
+    transition: transform 0.3s;
+  }
+  .fade-up {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.fade-up.in {
+    opacity: 1;
+}
+  .card img.eve {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-text {
+    padding: 15px;
+    margin-left: 1rem;
+    size: 6px;
+  }
+
+  .card-text h3 {
+    font-size: 20px;
+    margin-top: 0;
+  }
+
+  .card-text p {
+    font-size: 14px;
+  }
+
+  .card-text a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  .card-text a:hover {
+    text-decoration: underline;
+  }
+  
+  form{
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+.form-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/*Footer*/
+footer {
+    background-color: rgb(0, 110, 150);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.brochure {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border-radius: 10px 10px 0 0;
+}
+
+header h1 {
+  font-size: 24px;
+}
+
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 2s all ease;
+}
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
+}
+
+header p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.intro, .schedule, .contact {
+  margin: 20px 0;
+  text-align: left;
+}
+
+h2 {
+  color: #007bff;
+  font-size: 20px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+foot{
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Style links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.event-table-container {
+  display: flex;
+  max-width: 80%;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+    body{
+        overflow-x: hidden;
+        background-size: cover;
+    }
+    .glow-on-hover {
+        top: -9.5rem;
+        left: 12rem;
+        width: calc(35% + 4px);
+        height: calc(100% + 4px);
+    }
+    #rbtn{
+        position:absolute;
+        left: 35rem ;
+        top: 2rem;
+
+    }
+    #cord{
+        position: relative;
+        left: -8rem;
+
+    }
+    .eve{
+        margin-left: 2rem;
+    }
+    .card{
+        padding-left: -50rem;
+        margin-left: 6rem;
+
+    }
+    .card-text{
+        margin-left: 7rem;
+        padding-left: -2rem;
+    }
+    .eve{
+        margin-left: -0.1rem;
+    }
+
+
+}
+
+font-style{
+    font-size: 15px;
+    color: #000000;
+   }
+   
+.exodus{
+  left: 50rem;
+}
+
+.img-fluid{
+  border-radius: 2%;
+  width: 98%;
+  height: auto;
+  position:relative;
+  display: flex;
+  margin: auto;
+  margin-top: 1%;
+  text-align: center;
+  animation: slideUp 1s ease-in-out;
+}
+
+@keyframes slideUp {
+  0% {
+      transform: translateY(30%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateY(0%);
+      opacity: 1;
+  }
+}
+
+.text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  position: absolute;
+  letter-spacing: 5px;
+  top: 40%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  color: #00b7ff; 
+  padding: 10px 20px; 
+  font-size: 80px; 
+  text-align: center;
+  font-weight: bold;
+  animation: slide 2.5s ease-in-out;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #eeeeee, 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 40px rgb(0, 166, 255), 
+                 0 0 50px #ffffff, 0 0 60px #ffffff, 0 0 70px #ffffff;
+  }
+  to {
+    text-shadow: 0 0 20px #eeeeee, 0 0 30px #ffffff, 0 0 40px #ffffff, 0 0 50px #ffffff, 
+                 0 0 60px #f8f8f8, 0 0 70px #ffffff, 0 0 80px #ffffff;
+  }
+}
+
+@keyframes slide {
+  0% {
+      transform: translateY(-30%);
+      opacity: 0;
+  }
+  100% {
+      transform: translateX(-50% -50%);
+      opacity: 1;
+  }
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 90px 10px; /* Large padding which will shrink on scroll (using JS) */
+  transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+  position: fixed; /* Sticky/fixed navbar */
+  width: 100%;
+  top: 0; /* At the top */
+  z-index: 99;
+}
+
+/* Style the navbar links */
+#navbar {
+  background-color: rgb(0, 175, 184);
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* Add responsiveness - on screens less than 580px wide, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 580px) {
+  #navbar {
+    padding: 20px 10px !important;
+  }
+
+  body{
+    overflow-x: hidden;
+    background-size: cover;
+}
+.glow-on-hover {
+    top: -9.5rem;
+    left: 12rem;
+    width: calc(45% + 4px);
+    height: calc(100% + 4px);
+}
+#rbtn{
+    position:absolute;
+    left: 35rem ;
+    top: 2rem;
+
+}
+#cord{
+    position: relative;
+    left: -8rem;
+
+}
+.eve{
+    margin-left: 2rem;
+}
+.card{
+    padding-left: -50rem;
+    margin-left: 6rem;
+
+}
+.card-text{
+    margin-left: 7rem;
+    padding-left: -2rem;
+}
+.eve{
+    margin-left: -0.1rem;
+}
+}
+
+#logo{
+  color: white;
+}
+
+@media screen and (min-width: 1024px) {
+  body{
+    overflow-x: hidden;
+    background-size: cover;
+}
+.glow-on-hover {
+    top: -30rem;
+    left: 62rem;
+    width: calc(13% + 20px);
+    height: calc(100% + 40px);
+}
+#rbtn{
+    position:absolute;
+    left: 35rem ;
+    top: 2rem;
+
+}
+#cord{
+    width: calc(150% + 400px);
+    position: relative;
+    left: 5rem;
+
+}
+.eve{
+    margin-left: 2rem;
+}
+.card{
+    padding-left: -50rem;
+    margin-left: 6rem;
+
+}
+.card-text{
+    margin-left: 7rem;
+    padding-left: -2rem;
+}
+.eve{
+    margin-left: -0.1rem;
+}
+}
+
+/* For Tablet View */
+@media screen and (min-device-width: 768px) 
+  and (max-device-width: 1024px) {
+    body{
+      overflow-x: hidden;
+      background-size: cover;
+  }
+  .glow-on-hover {
+      top: -9.5rem;
+      left: 12rem;
+      width: calc(45% + 4px);
+      height: calc(100% + 4px);
+  }
+  #rbtn{
+      position:absolute;
+      left: 35rem ;
+      top: 2rem;
+
+  }
+  #cord{
+      position: relative;
+      left: -8rem;
+
+  }
+  .eve{
+      margin-left: 2rem;
+  }
+  .card{
+      padding-left: -50rem;
+      margin-left: 6rem;
+
+  }
+  .card-text{
+      margin-left: 7rem;
+      padding-left: -2rem;
+  }
+  .eve{
+      margin-left: -0.1rem;
+  }
+
+/* For Mobile Portrait View */
+@media screen and (max-device-width: 480px) 
+  and (orientation: portrait) {
+    body{
+      overflow-x: hidden;
+      background-size: cover;
+  }
+  .glow-on-hover {
+      top: -9.5rem;
+      left: 12rem;
+      width: calc(45% + 4px);
+      height: calc(100% + 4px);
+  }
+  #rbtn{
+      position:absolute;
+      left: 35rem ;
+      top: 2rem;
+
+  }
+  #cord{
+      position: relative;
+      left: -8rem;
+
+  }
+  .eve{
+      margin-left: 2rem;
+  }
+  .card{
+      padding-left: -50rem;
+      margin-left: 6rem;
+
+  }
+  .card-text{
+      margin-left: 7rem;
+      padding-left: -2rem;
+  }
+  .eve{
+      margin-left: -0.1rem;
+  }
+}
+
+/* For Mobile Landscape View */
+@media screen and (max-device-width: 640px) 
+  and (orientation: landscape) {
+    body{
+      overflow-x: hidden;
+      background-size: cover;
+  }
+  .glow-on-hover {
+      top: -9.5rem;
+      left: 12rem;
+      width: calc(45% + 4px);
+      height: calc(100% + 4px);
+  }
+  #rbtn{
+      position:absolute;
+      left: 35rem ;
+      top: 2rem;
+
+  }
+  #cord{
+      position: relative;
+      left: -8rem;
+
+  }
+  .eve{
+      margin-left: 2rem;
+  }
+  .card{
+      padding-left: -50rem;
+      margin-left: 6rem;
+
+  }
+  .card-text{
+      margin-left: 7rem;
+      padding-left: -2rem;
+  }
+  .eve{
+      margin-left: -0.1rem;
+  }
+}
+
+/* For Mobile Phones Portrait or Landscape View */
+@media screen
+  and (max-device-width: 640px) {
+    body{
+      overflow-x: hidden;
+      background-size: cover;
+  }
+  .glow-on-hover {
+      top: -9.5rem;
+      left: 12rem;
+      width: calc(45% + 4px);
+      height: calc(100% + 4px);
+  }
+  #rbtn{
+      position:absolute;
+      left: 35rem ;
+      top: 2rem;
+
+  }
+  #cord{
+      position: relative;
+      left: -8rem;
+
+  }
+  .eve{
+      margin-left: 2rem;
+  }
+  .card{
+      padding-left: -50rem;
+      margin-left: 6rem;
+
+  }
+  .card-text{
+      margin-left: 7rem;
+      padding-left: -2rem;
+  }
+  .eve{
+      margin-left: -0.1rem;
+  }
+}
+
+/* For iPhone 4 Portrait or Landscape View */
+@media screen and (min-device-width: 320px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      overflow-x: hidden;
+      background-size: cover;
+  }
+  .glow-on-hover {
+      top: -9.5rem;
+      left: 12rem;
+      width: calc(45% + 4px);
+      height: calc(100% + 4px);
+  }
+  #rbtn{
+      position:absolute;
+      left: 35rem ;
+      top: 2rem;
+
+  }
+  #cord{
+      position: relative;
+      left: -8rem;
+
+  }
+  .eve{
+      margin-left: 2rem;
+  }
+  .card{
+      padding-left: -50rem;
+      margin-left: 6rem;
+
+  }
+  .card-text{
+      margin-left: 7rem;
+      padding-left: -2rem;
+  }
+  .eve{
+      margin-left: -0.1rem;
+  }
+}
+
+/* For iPhone 5 Portrait or Landscape View */
+@media (device-height: 568px) 
+  and (device-width: 320px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    body{
+      overflow-x: hidden;
+      background-size: cover;
+  }
+  .glow-on-hover {
+      top: -9.5rem;
+      left: 12rem;
+      width: calc(45% + 4px);
+      height: calc(100% + 4px);
+  }
+  #rbtn{
+      position:absolute;
+      left: 35rem ;
+      top: 2rem;
+
+  }
+  #cord{
+      position: relative;
+      left: -8rem;
+
+  }
+  .eve{
+      margin-left: 2rem;
+  }
+  .card{
+      padding-left: -50rem;
+      margin-left: 6rem;
+
+  }
+  .card-text{
+      margin-left: 7rem;
+      padding-left: -2rem;
+  }
+  .eve{
+      margin-left: -0.1rem;
+  }
+}
+
+/* For iPhone 6 and 6 plus Portrait or Landscape View */
+@media (min-device-height: 667px) 
+  and (min-device-width: 375px) 
+  and (-webkit-min-device-pixel-ratio: 3) {
+    body{
+      overflow-x: hidden;
+      background-size: cover;
+  }
+  .banner{
+    width: fit-content;
+  }
+
+  .text{
+    font-size: 20px;
+  }
+  .glow-on-hover {
+      top: -9.5rem;
+      left: 12rem;
+      width: calc(45% + 4px);
+      height: calc(100% + 4px);
+  }
+  #rbtn{
+      position:absolute;
+      left: 35rem ;
+      top: 2rem;
+
+  }
+  #cord{
+      position: relative;
+      left: -8rem;
+
+  }
+  .eve{
+      margin-left: 2rem;
+  }
+  .card{
+      padding-left: -50rem;
+      margin-left: 6rem;
+
+  }
+  .card-text{
+      margin-left: 7rem;
+      padding-left: -2rem;
+  }
+  .eve{
+      margin-left: -0.1rem;
+  }
+};
+  }
